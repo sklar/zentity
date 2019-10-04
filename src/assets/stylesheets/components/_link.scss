@@ -1,0 +1,116 @@
+/**
+ * Component Link.
+ *
+ * @requires {mixin} link-underline
+ */
+
+// =============================================================================
+// Link
+// =============================================================================
+
+%lnk {
+    @include link-underline($underline: true);
+
+    color: map-get($link-color, initial);
+    cursor: pointer;
+    // transition: color 0.2s;
+}
+
+/**
+ * 1. We need to increase specifity.
+ */
+
+.lnk {
+    &,
+    &[class] {  /* 1 */
+        @extend %lnk;
+        @extend %lnk--active;
+        @extend %lnk--focus;
+        @extend %lnk--hover;
+        @extend %lnk--visited;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Link, plain (without any text decoration).
+ * 1. We need to increase specifity.
+ */
+
+.lnk {
+    &.--plain[class] {  /* 1 */
+        text-decoration: none;
+    }
+}
+
+/**
+ * Link, reverse.
+ */
+
+.lnk {
+    &.--reverse {
+        @include link-underline($underline: false);
+    }
+}
+
+/**
+ * States.
+ */
+
+/**
+ * Link, active.
+ */
+
+%lnk--active {
+    @if map-get($link-color, active) != map-get($link-color, initial) {
+        color: map-get($link-color, active);
+    }
+}
+
+/**
+ * Link, focus.
+ */
+
+%lnk--focus {
+    color: map-get($link-color, focus);
+}
+
+/**
+ * Link, hover.
+ */
+
+%lnk--hover {
+    @if map-get($link-color, hover) != map-get($link-color, focus) {
+        color: map-get($link-color, hover);
+    } @else {
+        @extend %lnk--focus;
+    }
+}
+
+/**
+ * Link, visited.
+ */
+
+%lnk--visited {
+    @if map-get($link-color, visit) != map-get($link-color, initial) {
+        color: map-get($link-color, visit);
+    }
+}
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

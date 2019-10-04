@@ -1,0 +1,76 @@
+/**
+ * Component Grid.
+ */
+
+// =============================================================================
+// Grid
+// =============================================================================
+
+/**
+ * Breakpoint-free badass (•̀ᴗ•́)و
+ */
+
+[data-grid] {
+    grid: {
+        gap:
+            var(--grid-gap-row, #{$grid-gap-row})
+            var(--grid-gap-column, #{$grid-gap-column}
+        );
+        template: {
+            columns: repeat(
+                var(--grid-sizing, #{$grid-sizing}),
+                minmax(
+                    var(--grid-column-min, #{$grid-column-min}),
+                    var(--grid-column-max, #{$grid-column-max})
+                )
+            );
+        }
+    }
+
+    &:not([data-grid="ignore"]) {
+        display: grid;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Grid, ignore columns.
+ */
+
+[data-grid="ignore"] {
+    grid-column: 1 / -1;
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

@@ -1,0 +1,16 @@
+/**
+ * Component Link settings.
+ */
+
+// =============================================================================
+// Link settings
+// =============================================================================
+
+// Set link color.
+$link-color: (
+    active:     $yellow--manz, // pressed
+    focus:      $yellow--manz, // focused
+    hover:      $yellow--manz, // hovered
+    initial:    $yellow--manz,
+    visit:      $yellow--manz, // visited
+);

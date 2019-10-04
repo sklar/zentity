@@ -1,0 +1,48 @@
+/**
+ * Layer Base settings.
+ */
+
+// =============================================================================
+// Base settings
+// =============================================================================
+
+// Set base background color.
+$base-background: DARKSLATEBLUE;
+
+// Set base text color.
+$base-color: WHITE;
+
+// Set base font family stack.
+$base-font-stack: ("Roboto Mono", Helvetica, sans-serif);
+
+// Set base font size.
+$base-font-size: 16px;
+
+// Set browser default font size.
+$base-font-size--browser: 16px;
+
+// Set base font weight.
+$base-font-weight: 400;
+
+// Set base line height.
+$base-line-height: 24px;
+
+// Set base line height ratio.
+$base-line-height-ratio: $base-line-height / $base-font-size;
+
+// Set base rhythm unit.
+$base-rhythm-unit: 0.5;
+
+// Set base `::selection` background.
+$base-selection-background: $yellow--laser;
+
+// Set base type scale (Perfect Fourth - 1.333).
+// @link http://bit.ly/2Qk81U3
+$base-type-scale: (
+    4.209, // 67
+    3.157, // 51
+    2.369, // 28
+    1.777, // 28
+    1.333, // 21
+    1,     // 16
+);

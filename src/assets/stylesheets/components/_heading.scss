@@ -1,0 +1,133 @@
+/**
+ * Component Heading.
+ *
+ * @requires {function}    rhythm-get
+ * @requires {mixin}       font-size
+ */
+
+// =============================================================================
+// Heading
+// =============================================================================
+
+%head {
+    color: $heading-color;
+    font-weight: 400;
+    margin: {
+        bottom: rhythm-get(1);
+        top: rhythm-get(2);
+    }
+}
+
+.head {}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * Heading 1.
+ */
+
+%head--1 {
+    @include font-size(
+        $size-to: nth($base-type-scale, 1) * $base-font-size,
+    );
+
+    // margin: {
+    //     bottom: rhythm-get(0.75);
+    //     top: rhythm-get(1.5);
+    // }
+}
+
+/**
+ * Heading 2.
+ */
+
+%head--2 {
+    @include font-size(
+        $size-to: nth($base-type-scale, 2) * $base-font-size,
+    );
+
+    // margin: {
+    //     bottom: rhythm-get(0.75);
+    //     top: rhythm-get(1.5);
+    // }
+}
+
+/**
+ * Heading 3.
+ */
+
+%head--3 {
+    @include font-size(
+        $size-to: nth($base-type-scale, 3) * $base-font-size,
+    );
+
+    margin: {
+        top: rhythm-get(1);
+    }
+}
+
+/**
+ * Heading 4.
+ */
+
+%head--4 {
+    @include font-size(
+        $size-to: nth($base-type-scale, 4) * $base-font-size
+    );
+
+    font-weight: 500;
+    margin: {
+        bottom: rhythm-get(0.5);
+        top: rhythm-get(1);
+    }
+}
+
+/**
+ * Heading 5.
+ */
+
+%head--5 {
+    @include font-size(
+        $size-to: nth($base-type-scale, 5) * $base-font-size
+    );
+
+    font-weight: 500;
+    margin: {
+        bottom: rhythm-get(0.5);
+        top: rhythm-get(1);
+    }
+    text-transform: uppercase;
+}
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

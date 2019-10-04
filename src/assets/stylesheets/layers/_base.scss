@@ -1,0 +1,245 @@
+/**
+ * Layer Base.
+ *
+ * @requires {function}    rhythm-get
+ * @requires {placeholder} %head
+ * @requires {placeholder} %head--1
+ * @requires {placeholder} %head--2
+ * @requires {placeholder} %head--3
+ * @requires {placeholder} %head--4
+ * @requires {placeholder} %head--5
+ * @requires {placeholder} %link
+ * @requires {placeholder} %rhythm
+ * @requires heading
+ * @requires link
+ */
+
+// =============================================================================
+// Base
+// =============================================================================
+
+/**
+ * 1. Disable the default callout shown on iOS when you touch and hold a touch target.
+ */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box; /* 1 */
+    outline: none;
+
+    -webkit-touch-callout: none; /* 2 */
+}
+
+/**
+ * 1. Webkit has a bug that prevents line-height being set in `rem` on <html>;
+ *  To work around this and simplify output, we can set initial line-height
+ *  in em's for all relative rhythm units.
+ * 2. Force printer to print background colors and images (override printing setup)
+ *  in Webkit.
+ *  @link https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust
+ */
+
+html {
+    font: {
+        family: $base-font-stack;
+        size: $base-font-size / $base-font-size--browser * 100%;
+        weight: $base-font-weight;
+    }
+    line-height: $base-line-height / $base-font-size * 1em; /* 1 */
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    background: {
+        color: $base-background;
+        image: url("../bg.svg");
+    }
+    color: $base-color;
+
+    -webkit-print-color-adjust: exact; /* 2 */
+}
+
+/**
+ * Selection color.
+ */
+
+::selection {
+    background-color: rgba($base-selection-background, 0.75);
+}
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+// Headings
+// =============================================================================
+
+@for $i from 1 through 5 {
+    h#{$i} {
+        @extend %head !optional;
+        @extend %head--#{$i} !optional;
+    }
+}
+
+// Block elements
+// =============================================================================
+
+address,
+p,
+pre {
+    @extend %rhythm;
+}
+
+address {
+    font-style: normal;
+}
+
+hr {
+     @extend %rhythm;
+     border: 0;
+}
+
+// Inline elements
+// =============================================================================
+
+a {
+    @extend %lnk !optional;
+}
+
+abbr {
+    &[title] {
+        text-decoration: none;
+    }
+}
+
+b,
+strong {
+    font-weight: 500;
+}
+
+// =============================================================================
+// Lists
+// =============================================================================
+
+// ol,
+// ul {
+//     @extend %rhythm;
+// }
+
+// li {
+//     margin-bottom: rhythm-get(0.125);
+// }
+
+// li > ol,
+// li > ul {
+//     margin: {
+//         top: rhythm-get(0.125);
+//     }
+// }
+
+// =============================================================================
+// Embedded content
+// =============================================================================
+
+
+// =============================================================================
+// Group elements
+// =============================================================================
+
+
+// =============================================================================
+// Form elements
+// =============================================================================
+
+fieldset {
+    @extend %rhythm;
+
+    border: 0;
+    padding: 0;
+}
+
+input,
+optgroup,
+select,
+textarea {
+    font: {
+        family: inherit;
+        weight: inherit;
+    }
+}
+
+/**
+ * 1. Disable min. content size in favour of `flexbox`.
+ *  @link https://bugzilla.mozilla.org/show_bug.cgi?id=1088586
+ */
+
+[type="email"],
+[type="text"],
+select {
+    min-width: 0; /* 2 */
+    text-overflow: ellipsis;
+}
+
+[type="number"] {
+    text-align: right;
+}
+
+:disabled {
+    cursor: not-allowed !important;
+}
+
+/**
+ * Select
+ * 1. We need to increase specifity.
+ */
+
+select {
+    &[name] {   /* 1 */
+        padding-right: 0;
+    }
+}
+
+/**
+ * Textarea
+ * 1. Allow only vertical resize.
+ * 2. We need to increase specifity.
+ */
+
+textarea {
+    resize: vertical;       /* 1 */
+
+    &:not([rows="1"]) {     /* 2 */
+        height: auto;
+        line-height: inherit;
+        padding: {
+            bottom: rhythm-get(0.25);
+            top: rhythm-get(0.25);
+        }
+    }
+}
+
+// =============================================================================
+// Tables
+// =============================================================================
+
+table {
+    width: 100%;
+}
+
+// =============================================================================
+// Browser (OS) specific
+// =============================================================================
+
+
+// =============================================================================
+// Print
+// =============================================================================
+
+// @page {}

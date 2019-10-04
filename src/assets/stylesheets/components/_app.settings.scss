@@ -1,0 +1,57 @@
+/**
+ * Component App settings.
+ */
+
+// =============================================================================
+// App settings
+// =============================================================================
+
+// Set app breakpoints.
+$app-breaks: (
+    480px,
+    640px,
+);
+
+// Set app features.
+$app-features: (
+    debug: false,
+);
+
+// Set app indent.
+$app-indent: (
+    // print: 10mm,
+    screen: 5vh 5vw,
+    // speech: ,
+);
+
+// Set app z-index.
+$app-index: 1;
+
+// Set app size.
+$app-size: (
+    screen: (
+        // max: 1600px,
+        max: 800px,
+        min: 320px,
+    ),
+);
+
+/**
+ * App head.
+ */
+
+// Set app head background.
+$app-head-background: #3a3a45;
+
+// Set app head color.
+$app-head-color: #fff;
+
+/**
+ * App foot.
+ */
+
+// Set app foot border color.
+$app-foot-border-color: #b0b0b5;
+
+// Set app foot border size.
+$app-foot-border-size: 1px;

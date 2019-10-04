@@ -1,0 +1,40 @@
+/**
+ * Component.
+ * Essentials to faciliate App components.
+ */
+
+// =============================================================================
+// Component
+// =============================================================================
+
+// Imports settings, libs, frameworks, layers, helpers and compoments.
+// ORDER DOES MATTER!
+
+// Settings
+// =============================================================================
+
+@import "layers/color.settings";
+@import "layers/base.settings";
+
+@import "components/app.settings";
+
+// Libs, Frameworks
+// =============================================================================
+
+
+// Helpers
+// =============================================================================
+
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/extends";
+
+// Layers
+// =============================================================================
+
+// @import "layers/supercoolayer";
+
+// Components
+// =============================================================================
+
+// @import "components/whaaaaam";

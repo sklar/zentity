@@ -1,0 +1,27 @@
+/**
+ * Cponverts a list into a string.
+ * It joins `list` chunks with `glue`.
+ *
+ * @author Hugo Giraudel
+ * @link https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+ *
+ * @param  {List} $list
+ * @param  {String} $glue
+ * @return {String}
+ */
+
+@function list-to-string($list, $glue: '') {
+    $result: null;
+
+    @for $i from 1 through length($list) {
+        $e: nth($list, $i);
+
+        $result: if(
+            $i != length($list),
+            $result#{$e}#{$glue},
+            $result#{$e}
+        );
+    }
+
+    @return $result;
+}

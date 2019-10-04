@@ -1,0 +1,176 @@
+/**
+ * Component App.
+ *
+ * @requires {function}    map-fetch
+ * @requires {function}    rhythm-get
+ * @requires {mixin}       size
+ */
+
+// =============================================================================
+// App
+// =============================================================================
+
+.app {
+    margin: 0 auto;
+    max-width: map-fetch($app-size, screen, max);
+    min-height: 100vh;
+    padding: map-get($app-indent, screen);
+
+    @if map-get($app-features, debug) {
+        background-color: KHAKI;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// App region(s)
+// =============================================================================
+
+// %app__region-x {
+//     padding: {
+//         left: map-get($app-indent, screen);
+//         right: map-get($app-indent, screen);
+//     }
+// }
+
+// %app__region-y {
+//     padding: {
+//         bottom: map-get($app-indent, screen);
+//         top: map-get($app-indent, screen);
+//     }
+// }
+
+// App head
+// =============================================================================
+
+.app__head {
+    h1 {
+        margin: {
+            bottom: rhythm-get(3);
+            top: 0;
+        }
+
+        a {
+            position: relative;
+            text-decoration: none;
+
+            &::after {
+                @include stretch(auto, 0, 0, 0);
+
+                border: 0.01em solid currentColor;
+                content: "";
+            }
+        }
+    }
+
+    @if map-get($app-features, debug) {
+        background-color: rgba(TOMATO, 0.85);
+    }
+}
+
+// App body
+// =============================================================================`
+
+/**
+ * 1. Position the App foot to the bottom.
+ */
+
+.app__body {
+    // @extend %app__region-x;
+    // @extend %app__region-y;
+
+    @media (min-width: nth($app-breaks, 2)) {
+        padding-top: 5vw;
+    }
+
+    @if map-get($app-features, debug) {
+        background-color: AQUAMARINE;
+    }
+}
+
+// App foot
+// =============================================================================
+
+.app__foot {
+    // @extend %app__region-x;
+    // @extend %app__region-y;
+
+    // border-top: $app-foot-border-size solid $app-foot-border-color;
+    // margin: {
+    //     top: 2 * map-get($app-indent, screen);
+    // }
+    // text-align: center;
+
+    @if map-get($app-features, debug) {
+        background-color: rgba(TOMATO, 0.85);
+    }
+}
+
+// App rack
+// =============================================================================
+
+.app__rack {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+/**
+ * Modifiers.
+ */
+
+/**
+ * App rack, bottom.
+ */
+
+.app__rack {
+    &.--bottom {
+        padding-top: 1rem;
+    }
+}
+
+/**
+ * App rack, top.
+ */
+
+.app__rack {
+    &.--top {
+        padding-bottom: 1rem;
+    }
+}
