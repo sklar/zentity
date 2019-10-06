@@ -2,6 +2,8 @@
  * Monster theme.
  */
 
+@import "layers/color.settings";
+
 // =============================================================================
 // Monster theme
 // =============================================================================
@@ -13,6 +15,7 @@
 // @import "zentity/dialog-theme";
 @import "zentity/form-field-theme";
 // @import "zentity/paginator-theme";
+@import "zentity/select-theme";
 // @import "zentity/snack-bar-theme";
 // @import "zentity/table-theme";
 // @import "zentity/tooltip-theme";
@@ -22,8 +25,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$zentity-primary: mat-palette($mat-blue);
-$zentity-accent:  mat-palette($mat-amber);
+$zentity-primary: mat-palette($mat-green);
+$zentity-accent:  mat-palette($mat-lime);
 
 // The warn palette is optional (defaults to red).
 $zentity-warn:  mat-palette($mat-deep-orange);
@@ -44,6 +47,7 @@ $zentity-config: mat-typography-config(
     // @include zentity-dialog-theme();
     @include zentity-form-field-theme();
     // @include zentity-paginator-theme();
+    @include zentity-select-theme();
     // @include zentity-snack-bar-theme();
     // @include zentity-table-theme();
     // @include zentity-tooltip-theme();
@@ -57,6 +61,7 @@ $zentity-config: mat-typography-config(
     // @include zentity-dialog-typography();
     @include zentity-form-field-typography();
     // @include zentity-paginator-typography();
+    @include zentity-select-typography();
     // @include zentity-snack-bar-typography();
     // @include zentity-table-typography();
     // @include zentity-tooltip-typography();

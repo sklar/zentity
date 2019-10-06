@@ -1,0 +1,60 @@
+/**
+ * Component Card.
+ */
+
+// =============================================================================
+// Card
+// =============================================================================
+
+.card {
+    background-color: rgba($card-border-color, 0.25);
+    border: $card-border-size solid rgba($card-border-color, 0.5);
+    border-radius: $card-border-radius;
+    display: block;
+    padding: $card-indent;
+
+    & + & {
+        margin-top: $card-indent;
+    }
+}
+
+/**
+ * Modifiers.
+ */
+
+// .component--modifier {}
+
+// .component {
+//     &.--modifier {}
+// }
+
+/**
+ * States.
+ */
+
+// .is-component-state {}
+
+// .component {
+//     &.is-state {}
+// }
+
+/**
+ * Context.
+ */
+
+// .has-component {}
+
+/**
+ * Animations.
+ */
+
+// @keyframes component-animation {}
+
+// =============================================================================
+// Subcomponents
+// =============================================================================
+
+// SubcomponentName
+// =============================================================================
+
+// .component__subcomponent {}

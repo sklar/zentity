@@ -14,7 +14,7 @@
 
 // @import "mathsass";
 @import "~normalize.css/normalize.css";
-// @import "material/themes/zentity";
+@import "material/themes/zentity";
 
 // Settings
 // =============================================================================
@@ -23,6 +23,7 @@
 @import "layers/base.settings";
 
 @import "components/app.settings";
+@import "components/card.settings";
 @import "components/cursor.settings";
 // @import "components/button.group.settings";
 @import "components/grid.settings";
@@ -45,6 +46,7 @@
 // =============================================================================
 
 @import "components/app";
+@import "components/card";
 @import "components/cursor";
 // @import "components/button.group";
 @import "components/grid";

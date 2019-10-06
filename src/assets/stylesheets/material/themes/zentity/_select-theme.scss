@@ -1,0 +1,33 @@
+/**
+ * Select theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin zentity-select-theme($theme: ()) {
+
+    .mat-select-value {
+        color: WHITE;
+    }
+
+    .mat-select-panel {
+        background-color: $blue--jacarta;
+    }
+
+    .mat-option {
+        color: WHITE;
+
+        &[class]:hover {
+            background-color: darken($blue--jacarta, 5%);
+        }
+    }
+
+}
+
+/**
+ * Select typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin zentity-select-typography($conf: ()) {  }

@@ -1,0 +1,91 @@
+/**
+ * Component Form.
+ */
+
+@import "component";
+
+// Set breakpoints.
+$breaks: $app-breaks;
+
+// Set features.
+$features: (
+    debug: false,
+);
+
+// Set gap.
+$gap: 1rem;
+
+
+// =============================================================================
+// Form
+// =============================================================================
+
+form {
+    display: grid;
+    grid: {
+        gap: $gap;
+        template: {
+            areas:
+                "iamount icurrency"
+                "oamount ocurrency"
+                "button button"
+            ;
+            columns:
+                auto
+                minmax(100px, 20%)
+            ;
+        }
+    }
+
+    @media (min-width: nth($breaks, 1)) {
+        grid: {
+            template: {
+                areas:
+                    "iamount icurrency button"
+                    "oamount ocurrency button"
+                ;
+                columns:
+                    auto
+                    minmax(100px, 20%)
+                    minmax(100px, 20%)
+                ;
+            }
+        }
+    }
+
+    @if map-get($features, debug) {
+        background-color: TOMATO;
+    }
+}
+
+.amount {
+    &:nth-child(1) {
+        grid-area: iamount;
+    }
+    &:nth-child(3) {
+        grid-area: oamount;
+    }
+}
+
+.currency {
+    &:nth-child(2) {
+        grid-area: icurrency;
+    }
+    &:nth-child(4) {
+        grid-area: ocurrency;
+    }
+}
+
+.button {
+    grid-area: button;
+    transition: {
+        duration: 0.3s;
+        property: background, color;
+    }
+}
+
+.output {
+    input {
+        color: WHITE;
+    }
+}
