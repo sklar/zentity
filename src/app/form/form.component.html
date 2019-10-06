@@ -16,9 +16,10 @@
                         appearance="outline"
                         color="accent">
             <mat-select formControlName="currency">
-                <mat-option value="EUR">EUR</mat-option>
-                <mat-option value="CAD">CAD</mat-option>
-                <mat-option value="CZK">CZK</mat-option>
+                <mat-option [value]="currency"
+                            *ngFor="let currency of currencies">
+                    {{ currency }}
+                </mat-option>
             </mat-select>
         </mat-form-field>
     </ng-container>
@@ -26,8 +27,13 @@
         <mat-form-field class="output amount"
                         appearance="outline">
             <input type="number"
+                   class="u-none"
                    readonly
                    formControlName="amount"
+                   matInput>
+            <input type="number"
+                   readonly
+                   [value]="conversion | number:'1.2-2'"
                    matInput>
         </mat-form-field>
         <mat-form-field class="output currency"
@@ -41,7 +47,7 @@
     <button class="button --large --110 u-text --upper"
             color="accent"
             mat-flat-button
-            [disabled]="calculator.invalid">
+            [disabled]="!isSubmitAllowed">
         Submit
     </button>
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import {
     MatButtonModule,
     MatFormFieldModule,
@@ -20,6 +21,7 @@ import { FormComponent } from './form/form.component';
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
