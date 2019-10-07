@@ -21,6 +21,10 @@ export class ListComponent implements OnInit {
         private listService: ListService,
     ) { }
 
+    get sum() {
+        return this.listService.getSum();
+    }
+
     ngOnInit() {
         this.dataSource = this.listService.getItems();
     }

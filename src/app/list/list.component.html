@@ -5,7 +5,7 @@
     <ng-container matColumnDef="input">
         <td mat-cell
             *matCellDef="let item">
-            {{ item.input.amount | currency:'EUR':'symbol':'1.2-2' }}
+            {{ item.input.amount | currency:item.input.currency:'symbol':'1.2-2' }}
         </td>
     </ng-container>
 
@@ -13,7 +13,7 @@
     <ng-container matColumnDef="output">
         <td mat-cell
             *matCellDef="let item">
-            {{ item.output.amount | currency:'USD':'symbol':'1.2-2' }}
+            {{ item.output.amount | currency:item.output.currency:'symbol':'1.2-2' }}
         </td>
     </ng-container>
 
@@ -24,5 +24,5 @@
 </table>
 
 <p class="total">
-    {{ 52342 | currency:'USD':'symbol':'1.2-2' }}
+    {{ sum | currency:'USD':'symbol':'1.2-2' }}
 </p>
