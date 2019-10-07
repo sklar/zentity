@@ -1,4 +1,4 @@
-# Zentity
+# Zentity [![Netlify Status](https://api.netlify.com/api/v1/badges/1cb3a784-e807-4904-b040-c514733be072/deploy-status)](https://app.netlify.com/sites/zentity-486d02/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
