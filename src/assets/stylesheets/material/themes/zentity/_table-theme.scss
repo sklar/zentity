@@ -1,0 +1,67 @@
+/**
+ * Table theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin zentity-table-theme($theme: ()) {
+
+    .mat-table {
+        table-layout: fixed;
+
+        &,
+        [role="rowgroup"] {
+            background: none;
+        }
+    }
+
+    .mat-cell,
+    .mat-footer-cell,
+    .mat-header-cell {
+
+        $indent: 4px;
+
+        &[class][class] {
+            padding: {
+                bottom: $indent;
+                top: $indent;
+            }
+        }
+        &:not(:first-of-type) {
+            padding: {
+                left: $indent;
+            }
+        }
+        &:not(:last-of-type) {
+            padding: {
+                right: $indent;
+            }
+        }
+    }
+
+    .mat-row {
+        background: none;
+    }
+
+    .mat-cell {
+        color: inherit;
+
+        &[class] {
+            border-color: rgba(WHITE, 0.25);
+        }
+    }
+}
+
+/**
+ * Table typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin zentity-table-typography($conf: ()) {
+
+    .mat-header-cell {
+        font-size: 0.9rem;
+    }
+
+}

@@ -11,14 +11,10 @@
 @import "~@angular/material/theming";
 
 @import "zentity/button-theme";
-// @import "zentity/button-toggle-theme";
-// @import "zentity/dialog-theme";
 @import "zentity/form-field-theme";
-// @import "zentity/paginator-theme";
 @import "zentity/select-theme";
-// @import "zentity/snack-bar-theme";
-// @import "zentity/table-theme";
-// @import "zentity/tooltip-theme";
+@import "zentity/snack-bar-theme";
+@import "zentity/table-theme";
 
 
 
@@ -43,28 +39,20 @@ $zentity-config: mat-typography-config(
 @mixin zentity-material-theme($theme: $zentity-theme) {
 
     @include zentity-button-theme();
-    // @include zentity-button-toggle-theme();
-    // @include zentity-dialog-theme();
     @include zentity-form-field-theme();
-    // @include zentity-paginator-theme();
     @include zentity-select-theme();
-    // @include zentity-snack-bar-theme();
-    // @include zentity-table-theme();
-    // @include zentity-tooltip-theme();
+    @include zentity-snack-bar-theme();
+    @include zentity-table-theme();
 
 }
 
 @mixin zentity-material-config($conf: $zentity-config) {
 
     @include zentity-button-typography();
-    // @include zentity-button-toggle-typography();
-    // @include zentity-dialog-typography();
     @include zentity-form-field-typography();
-    // @include zentity-paginator-typography();
     @include zentity-select-typography();
-    // @include zentity-snack-bar-typography();
-    // @include zentity-table-typography();
-    // @include zentity-tooltip-typography();
+    @include zentity-snack-bar-typography();
+    @include zentity-table-typography();
 
 }
 
@@ -82,7 +70,7 @@ $zentity-config: mat-typography-config(
     // @include mat-card-theme($theme);
     // @include mat-checkbox-theme($theme);
     // @include mat-chips-theme($theme);
-    // @include mat-table-theme($theme);
+    @include mat-table-theme($theme);
     // @include mat-datepicker-theme($theme);
     // @include mat-dialog-theme($theme);
     // @include mat-divider-theme($theme);
@@ -107,7 +95,7 @@ $zentity-config: mat-typography-config(
     // @include mat-toolbar-theme($theme);
     // @include mat-tooltip-theme($theme);
     // @include mat-tree-theme($theme);
-    // @include mat-snack-bar-theme($theme);
+    @include mat-snack-bar-theme($theme);
 
 }
 

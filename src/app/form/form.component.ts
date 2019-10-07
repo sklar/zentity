@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CalculatorService, CURRENCY_BASE, CURRENCY_DEFAULT, Rates } from '../shared/calculator.service';
+import { ListItem, ListService } from '../shared/list.service';
 
 @Component({
     selector: 'app-form',
@@ -19,6 +20,7 @@ export class FormComponent implements OnInit {
     constructor(
         private calculatorService: CalculatorService,
         private formBuilder: FormBuilder,
+        private listService: ListService,
     ) { }
 
     get currencies() {
@@ -57,10 +59,21 @@ export class FormComponent implements OnInit {
     }
 
     onSubmit(form: FormGroup) {
-        console.log(form);
+        const input = form.controls.input;
+        const output = form.controls.output;
+        const item: ListItem = {
+            input: {
+                amount: input.get('amount').value,
+                currency: input.get('currency').value
+            },
+            output: {
+                amount: output.get('amount').value,
+                currency: output.get('currency').value
+            }
+        };
 
         if (this.isSubmitAllowed) {
-            // this.listService.addItem(form.value);
+            this.listService.addItem(item);
         }
     }
 

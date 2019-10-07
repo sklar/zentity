@@ -1,0 +1,46 @@
+/**
+ * Button theme.
+ *
+ * param {Map} $theme
+ */
+
+@mixin zentity-button-theme($theme: ()) {
+
+    [class*="button"] {
+        flex-shrink: 0;
+
+        &.mat-flat-button {
+            min-width: 5em;
+        }
+
+        &.--large {
+            line-height: 60px;
+            padding: {
+                left: 24px;
+                right: 24px;
+            }
+        }
+
+        &.--small {
+            line-height: 28px;
+            padding: {
+                left: 8px;
+                right: 8px;
+            }
+        }
+    }
+}
+
+/**
+ * Button typography.
+ *
+ * param {Map} $conf
+ */
+
+@mixin zentity-button-typography($conf: ()) {
+
+    [class*="button"] {
+        font-weight: 500;
+    }
+
+}
