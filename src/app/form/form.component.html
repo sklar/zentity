@@ -29,10 +29,12 @@
             <input type="number"
                    class="u-none"
                    readonly
+                   tabIndex="-1"
                    formControlName="amount"
                    matInput>
             <input type="text"
                    readonly
+                   tabIndex="-1"
                    [value]="conversion | number:'1.2-2'"
                    matInput>
         </mat-form-field>
